@@ -1,3 +1,4 @@
+---
 version: '3'
 
 services:
@@ -6,9 +7,7 @@ services:
             context: ./java
             dockerfile: java.Dockerfile
         volumes:
-            - myapp:/javaapp/boxfuse-sample-java-war-hello/target
-        depends_on:
-            - tomcat
+            - myapp:/javaapp/war-web-project/target
 
     tomcat:
         build:
@@ -17,7 +16,9 @@ services:
         ports:
             - '8080:8080'
         volumes:
-            - myapp:/usr/local/tomcat/webapps
+            - myapp:/opt/tomcat/webapps
+        depends_on:
+            - java
 
 volumes:
     myapp:

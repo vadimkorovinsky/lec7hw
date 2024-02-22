@@ -25,6 +25,5 @@ RUN apk del curl && \
 
 EXPOSE 8080
 
-ENTRYPOINT $CATALINA_HOME/bin/catalina.sh
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 
-WORKDIR $CATALINA_HOME

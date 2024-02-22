@@ -5,7 +5,7 @@ RUN apt install git -y
 RUN apt install maven -y
 WORKDIR /javaapp
 RUN cd /javaapp
-RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-RUN cd boxfuse-sample-java-war-hello
-WORKDIR /javaapp/boxfuse-sample-java-war-hello
-RUN mvn clean package -DskipTests
+RUN git clone https://github.com/koddas/war-web-project.git
+RUN cd war-web-project
+WORKDIR /javaapp/war-web-project
+RUN mvn clean package
